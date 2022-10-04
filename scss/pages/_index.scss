@@ -1,0 +1,7 @@
+nav.nuestras-categorias ul li{
+    @extend %sepcategorias;
+
+ img {
+    @extend %categorias;
+}
+}

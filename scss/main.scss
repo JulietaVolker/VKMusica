@@ -1,0 +1,19 @@
+@import "./utils/variables.scss";
+
+@import "./base/reset";
+@import "./base/colors";
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typo";
+
+@import "./layout/footer";
+@import "./layout/header";
+
+@import "./components/carousel";
+@import "./components/card";
+
+@import "./pages/contacto";
+@import "./pages/index";
+@import "./pages/variosvientos";
+@import "./pages/usuario";
+@import "./pages/crearcuenta";

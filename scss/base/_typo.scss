@@ -1,0 +1,22 @@
+*{
+    font-family: Noto Serif HK;
+}
+
+h1, h2, h3{
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 1rem;
+}
+
+a{
+    color: $color-negro ;
+    text-decoration: none;
+
+    &:hover{
+        @include animations ($color-azul)
+    }
+}
+
+li{
+    list-style: none;
+}

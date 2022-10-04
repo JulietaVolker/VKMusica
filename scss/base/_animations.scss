@@ -1,0 +1,6 @@
+@mixin animations ($color, $trans-d:500ms, $transform: scale(1.1)){
+    color: $color;
+    transition-property: all;
+    transition-duration: $trans-d;
+    transform: $transform;
+}

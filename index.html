@@ -10,62 +10,70 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&family=Noto+Serif+HK:wght@200;900&family=Roboto+Slab:wght@500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/ss/styles.css">
-    <title>VKMusica</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <meta name="description" content="Casa de instrumentos musicales y sonido en Zona Norte, Buenos Aires, Pilar. Envios gratis y Ofertas!">
+    <title>VKMusica | Instrumentos Musicales Pilar</title>
 </head>
 
 <body>
     <header>
-        <section class="header">
-        <!-- Sobre nosotros -->
-        <section class="header-uno">
-            <div class="display-nc">
-                <a class="enlace-azul" href="#">Sobre Nosotros</a>
-            </div>
-            <!-- Logo -->
-            <div class="logo">
-                <a href="./index.html">
-                    <img class="logo__img" src="./assets/img/logo/WhatsApp Image 2022-08-23 at 7.23.09 PM.jpeg"
-                        alt="VKMusica">
-                </a>
-            </div>
-            <!-- Contacto -->
-            <div class="display-nc">
-                <a class="enlace-azul" href="./pages/contacto.html">Contacto</a>
-            </div>
-            <!-- User Celular -->
-            <section class="header__clientec display-cc">
-                <div>
+        <section class="container-fluid container-md">
+            <!-- Sobre nosotros -->
+            <section class="d-flex justify-content-between d-md-block">
+                <section class="d-flex justify-content-md-between align-items-center">
+                    <div>
+                        <a class="enlace-azul d-none d-md-block" href="#">Sobre Nosotros</a>
+                    </div>
+                    <!-- Logo -->
+                    <div>
+                        <a class="d-flex justify-content-start justify-content-md-center" href="./index.html">
+                            <img class="w-50 logo" src="./assets/img/logo/WhatsApp Image 2022-08-23 at 7.23.09 PM.jpeg"
+                                alt="VKMusica">
+                        </a>
+                    </div>
+                    <!-- Contacto -->
+                    <div>
+                        <a class="enlace-azul d-none d-md-block" href="./pages/contacto.html">Contacto</a>
+                    </div>
+                </section>
+                <!-- User Celular -->
+                <section class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex d-md-none fs-2 user">
+                        <a href="./pages/usuario.html" class="enlace-azul">
+                            <i class="bi bi-person-circle"></i>
+                        </a>
+                        <a href="#" class="enlace-azul">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                        <a href="#" class="enlace-azul">
+                            <i class="bi bi-cart3"></i>
+                        </a>
+                    </div>
+                </section>
+            </section>
+            <!-- Buscar Header-dos -->
+            <section class="d-flex justify-content-between align-items-center">
+                <div class="d-flex justify-content-center justify-content-md-end col-12 col-md-10">
+                    <input class="buscar w-75" type="search" placeholder="Buscar">
+                </div>
+
+                <!-- User Escritorio -->
+
+                <div class="d-none d-md-flex justify-content-end fs-2 user col-md-1">
                     <a href="./pages/usuario.html" class="enlace-azul">
                         <i class="bi bi-person-circle"></i></a>
                     <a href="#" class="enlace-azul">
-                        <img src="./assets/img/logo/corazon.png" alt="Mis me gusta"></a>
+                        <i class="bi bi-heart"></i></a>
                     <a href="#" class="enlace-azul">
-                        <img src="./assets/img/logo/carrito.png" alt="Carrito"></a>
+                        <i class="bi bi-cart3"></i></a>
                 </div>
             </section>
         </section>
-        <!-- Buscar Header-dos -->
-        <section class="header-dos">
-            <div class="buscar">
-                <input class="input-g" type="search" placeholder="Buscar">
-            </div>
-
-            <!-- User Escritorio -->
-          
-                <div class="display-nc header-cliente">
-                 <a href="./pages/usuario.html" class="enlace-azul">
-                    <img src="./assets/img/logo/user.jpg" alt="Usuario"></a>
-                <a href="#" class="enlace-azul">
-                    <img src="./assets/img/logo/corazon.png" alt="Mis me gusta"></a>
-                <a href="#" class="enlace-azul">
-                    <img src="./assets/img/logo/carrito.png" alt="Carrito"></a>
-            </div>
-        </section>
-    </section>
         <!-- Navegacion -->
-        <nav class="enlace display-es">
-            <ul>
+        <nav class="container-fluid d-none d-md-block bg-dark">
+            <ul class="d-flex justify-content-between p-2 m-0">
                 <li><a class="enlace__categoria" href="#">Guitarras</a></li>
                 <li><a class="enlace__categoria" href="#">Bajos</a></li>
                 <li><a class="enlace__categoria" href="#">Cuerdas</a></li>
@@ -73,7 +81,7 @@
                 <li><a class="enlace__categoria" href="#">Percusion</a></li>
                 <li><a class="enlace__categoria" href="./pages/variosvientos.html">Vientos</a></li>
                 <li><a class="enlace__categoria" href="#">Sonido</a></li>
-                <li><a class="enlace__categoria" href="#">Iluminacion</a></li>
+                <li><a class="enlace__categoria" href="#">Luces</a></li>
                 <li><a class="enlace__categoria" href="#">Microfonos</a></li>
                 <li><a class="enlace__categoria" href="#">Estuches</a></li>
             </ul>
@@ -81,65 +89,92 @@
     </header>
 
     <!-- Cuerpo -->
-
-    <section class="principal">
-        <img class="principal__img" src="./assets/img/principal/estudio.jpg" alt="Estudio de grabacion">
+    <section>
+        <div id="carousel-p" class="carousel carousel-ligth slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="./assets/img/principal/estudio.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Queres armar tu estudio?</h1>
+                        <p>Nosotros te podemos asesorar con el armado de tu estudio, tenemos personas capacitadas para poder asesorarte y armarte presupuestos a medida.</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./assets/img/principal/portada.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Que te gustaria aprender?</h2>
+                        <p>Tenemos clases de instrumentos para principiantes y puedas saber cual es tu instrumento favorito!</p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="4000">
+                    <img src="./assets/img/principal/portadasaxo.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2>Todo sobre vientos</h2>
+                        <p>Te enseñamos como cuidar tu instrumento de viento, los cuidados a tener, limpiezas, tipo de protecciones para boquillas, y tambien te asesoramos sobre boquillas y cañas! Tenemos asesores especializados.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-p" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-p" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </section>
     <!-- Nuestras categorias -->
-    <section class="nuestras-categorias">
-        <h1 class="medidag">Nuestras Categorias</h1>
-        <nav class="categorias">
-            <ul class="categorias__ulb">
-                <li class="categorias__lib">
+    <section class="container-fluid container-md">
+        <h3 class="d-flex justify-content-center">Nuestras Categorias</h3>
+        <nav class="nuestras-categorias">
+            <ul class="p-0 d-flex flex-wrap justify-content-evenly">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
-                    <img src="./assets/img/categorias/ukelele.jpg" alt="Guitarras">
-                    Guitarras</a>
+                        <img src="./assets/img/categorias/ukelele.jpg" alt="Guitarras">
+                        Guitarras</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
                         <img src="./assets/img/categorias/bajo.jpg" alt="Bajos">
-                    Bajos</a>
+                        Bajos</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
-                        <img src="./assets/img/categorias/violin.jpg"
-                            alt="Otros Instrumentos de Cuerdas">
+                        <img src="./assets/img/categorias/violin.jpg" alt="Otros Instrumentos de Cuerdas">
                         Cuerdas</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
                         <img src="./assets/img/categorias/bateria.jpg" alt="Bateria">
                         Bateria</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
                         <img src="./assets/img/categorias/bongo.jpg" alt="Percusion">
                         Percusion</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="./pages/variosvientos.html">
-                        <img src="./assets/img/categorias/saxoaltoocean.jpg"
-                            alt="Vientos">
+                        <img src="./assets/img/categorias/saxoaltoocean.jpg" alt="Vientos">
                         Vientos</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
                         <img src="./assets/img/categorias/sonido.jpg" alt="Sonido">
                         Sonido</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
-                        <img src="./assets/img/categorias/iluminacion.jpg"
-                            alt="Iluminacion">
-                        Iluminacion</a>
+                        <img src="./assets/img/categorias/iluminacion.jpg" alt="Luces">
+                        Luces</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
-                        <img src="./assets/img/categorias/microfono.jpg"
-                            alt="Microfonos">
+                        <img src="./assets/img/categorias/microfono.jpg" alt="Microfonos">
                         Microfonos</a>
                 </li>
-                <li class="categorias__lib">
+                <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
                     <a class="enlace-azul" href="#">
                         <img src="./assets/img/categorias/estuche.jpg" alt="Estuches">
                         Estuches</a>
@@ -150,37 +185,44 @@
 
     <!-- Tutoriales Youtube -->
 
-    <section class="video">
-        <h2 class="medidag">Tutorial Youtube</h2>
-        <p class="medidag">Te podemos ayudar y asesorar con el armado de tu sonido</p>
-        <div class="video__iframe">
+    <section">
+        <h3 class="d-flex justify-content-center">Tutorial Youtube</h3>
+        <p class="d-flex justify-content-center text-center">Te podemos ayudar y asesorar con el armado de tu sonido</p>
+        <div class="d-flex justify-content-center">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/f2cKtoAog2A"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
+                allowfullscreen loading="lazy"></iframe>
         </div>
-    </section>
-
-     <!-- Footer -->
-
-     <footer>
-        <section class="footer">
-            <a href="./index.html">
-                <img class="logo" src="./assets/img/logo/WhatsApp Image 2022-08-23 at 7.23.09 PM.jpeg" alt="VKMusica">
-            </a>
-            <div class="footer__redes">
-                <a href="https://www.facebook.com/">
-                    <img class="footer__img" src="./assets/img/logo/facebookf.jpg" alt="facebook">
-                </a>
-                <a href="https://www.google.com/">
-                    <img class="footer__img" src="./assets/img/logo/google.png" alt="google">
-                </a>
-                <a href="https://www.instagram.com/">
-                    <img class="footer__img" src="./assets/img/logo/instagram.jpg" alt="instagram">
-                </a>
-            </div>
         </section>
-    </footer>
+
+        <!-- Footer -->
+
+        <footer>
+            <section class="d-flex justify-content-between flex-md-column">
+                <div class="d-flex justify-content-start justify-content-md-center">
+                    <a class="d-flex justify-content-start justify-content-md-center" href="./index.html">
+                        <img class="w-50 logo" src="./assets/img/logo/WhatsApp Image 2022-08-23 at 7.23.09 PM.jpeg"
+                            alt="VKMusica">
+                    </a>
+                </div>
+            <div>
+                <h4 class="d-none d-md-flex justify-content-center">Nuestras Redes</h4>
+                <div class="fs-1 d-flex justify-content-start justify-content-md-evenly">
+                    <a class="enlace-azul" href="https://www.facebook.com/">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a class="enlace-azul" href="https://www.google.com/">
+                        <i class="bi bi-google"></i>
+                    </a>
+                    <a class="enlace-azul" href="https://www.instagram.com/">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            </section>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

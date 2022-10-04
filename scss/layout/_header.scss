@@ -1,0 +1,28 @@
+header{
+    background-color: $color-backghf;
+
+    img.logo{
+        max-width: 300px;
+    }
+
+    .user a{
+        margin-right: 5px;
+    }
+
+    .buscar {
+        border-radius: 10px;
+        border: none;
+        margin: 2px;
+    }
+
+    .enlace__categoria{
+        color: $color-blanco
+    }
+
+    a.enlace__categoria:hover{
+        @include animations ($color-blanco);
+        padding: 8px;
+        border-radius: 20px;
+        background-color: $color-azul
+    }
+}
