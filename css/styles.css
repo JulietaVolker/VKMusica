@@ -41,6 +41,8 @@ li {
 
 footer {
   background-color: #edede9;
+  position: absolute;
+  bottom: 0;
 }
 footer i {
   margin-left: 5px;
