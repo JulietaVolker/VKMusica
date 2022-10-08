@@ -1,7 +1,35 @@
-nav.nuestras-categorias ul li{
-    @extend %sepcategorias;
+// Pantalla chica
 
- img {
-    @extend %categorias;
+nav.nuestras-categorias ul li {
+    border-bottom: solid 1px $color-backghf;
+    margin-bottom: 1%;
+
+    img {
+        width: 100px;
+        height: 100px;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
 }
+
+// pantalla mediana / grande
+
+nav.nuestras-categorias ul li {
+    @include tammd {
+        border-bottom: solid 1px $color-backghf;
+        margin-bottom: 1%;
+        font-size: 1.2em;
+        display: block;
+        width: 300px;
+
+
+        img {
+            width: 140px;
+            height: 140px;
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
 }
