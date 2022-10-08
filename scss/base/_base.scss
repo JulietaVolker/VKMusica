@@ -12,19 +12,10 @@
     }
 }
 
-// Molde categoria
-
-%sepcategorias{
-    border-bottom: solid 1px $color-backghf;
-    margin-bottom: 1%;
-}
-
-%categorias{
-    width: 100px;
-    height: 100px;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+@mixin tammd {
+    @media (min-width:768px){
+        @content;
+    }
 }
 
 // Molde Boton
@@ -32,6 +23,14 @@
 %boton{
     color: $color-blanco;
     background-color: $color-azul;
+    border-radius: 10px;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+%botonpref{
+    color: $color-azul;
+    background-color: $color-azult;
     border-radius: 10px;
     padding-left: 2%;
     padding-right: 2%;

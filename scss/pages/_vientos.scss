@@ -1,0 +1,22 @@
+.bodyvientos{
+    background-color: rgb(247, 247, 247)
+}
+
+div.vientos{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+.vientos__boton{
+    @extend %boton;
+}
+
+.vientos__botonpref{
+    @extend %botonpref;
+}
+
+.vientos__ha a:hover{
+    color: white;
+}
+}
