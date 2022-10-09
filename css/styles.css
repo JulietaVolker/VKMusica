@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vw;
+}
+
 .cuenta input.submit, .user input.submit, div.vientos .vientos__boton, .contacto input.submit {
   color: #ffffff;
   background-color: #150578;
@@ -41,8 +47,7 @@ li {
 
 footer {
   background-color: #edede9;
-  position: absolute;
-  bottom: 0;
+  margin-top: auto;
 }
 footer i {
   margin-left: 5px;
