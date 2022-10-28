@@ -15,14 +15,25 @@ header{
         margin: 2px;
     }
 
-    .enlace__categoria{
-        color: $color-blanco
+    .btn-cat{
+        color: $color-blanco;
+        background-color: #00000000;
+        border: 0;
     }
 
-    a.enlace__categoria:hover{
+    button.btn-cat:hover{
         @include animations ($color-blanco);
-        padding: 8px;
-        border-radius: 20px;
+        padding: 3px;
+        border-radius: 5px;
         background-color: $color-azul
     }
+}
+
+// cambio tamaño usuario
+.dropdown-menucom{
+    width: 30rem;
+}
+
+.dropdown-menuc{
+    width: 20rem;
 }
