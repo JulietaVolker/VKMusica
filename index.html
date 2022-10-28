@@ -42,9 +42,32 @@
                 <!-- User Celular -->
                 <section class="d-flex align-items-center justify-content-between">
                     <div class="d-flex d-md-none fs-2 user">
-                        <a href="./pages/usuario.html" class="enlace-azul">
-                            <i class="bi bi-person-circle"></i>
-                        </a>
+                        <div class="dropdown">
+                            <i class="bi bi-person-circle" data-bs-toggle="dropdown" aria-expanded="false"
+                                data-bs-auto-close="outside"></i>
+                            <form class="dropdown-menu dropdown-menuc  p-4">
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="exampleDropdownFormEmail2"
+                                        placeholder="email@example.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleDropdownFormPassword2" class="form-label">Comtraseña</label>
+                                    <input type="password" class="form-control" id="exampleDropdownFormPassword2"
+                                        placeholder="Contraseña">
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                        <label class="form-check-label" for="dropdownCheck2">
+                                            Recuerdame
+                                        </label>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Ingresar</button>
+                                <a href="./pages/crear-cuenta.html">Crear cuenta</a>
+                            </form>
+                        </div>
                         <a href="#" class="enlace-azul">
                             <i class="bi bi-heart"></i>
                         </a>
@@ -63,11 +86,34 @@
                 <!-- User Escritorio -->
 
                 <div class="d-none d-md-flex justify-content-end fs-2 user col-md-1">
-                    <a href="./pages/usuario.html" class="enlace-azul">
-                        <i class="bi bi-person-circle"></i></a>
-                    <a href="#" class="enlace-azul">
+                    <div class="dropdown m-1">
+                        <i class="bi bi-person-circle" data-bs-toggle="dropdown" aria-expanded="false"
+                            data-bs-auto-close="outside"></i>
+                        <form class="dropdown-menu dropdown-menucom p-4">
+                            <div class="mb-3">
+                                <label for="emailform" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailform" placeholder="email@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contraform" class="form-label">Comtraseña</label>
+                                <input type="password" class="form-control" id="contraform" placeholder="Contraseña">
+                            </div>
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                    <label class="form-check-label" for="dropdownCheck2">
+                                        Recuerdame
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ingresar</button>
+                            <a href="./pages/crear-cuenta.html">Crear cuenta</a>
+                        </form>
+                    </div>
+                    </a>
+                    <a href="#" class="enlace-azul m-1">
                         <i class="bi bi-heart"></i></a>
-                    <a href="#" class="enlace-azul">
+                    <a href="#" class="enlace-azul m-1">
                         <i class="bi bi-cart3"></i></a>
                 </div>
             </section>
@@ -75,16 +121,113 @@
         <!-- Navegacion -->
         <nav class="container-fluid d-none d-md-block bg-dark">
             <ul class="d-flex justify-content-between p-2 m-0">
-                <li><a class="enlace__categoria" href="#">Guitarras</a></li>
-                <li><a class="enlace__categoria" href="#">Bajos</a></li>
-                <li><a class="enlace__categoria" href="#">Cuerdas</a></li>
-                <li><a class="enlace__categoria" href="#">Bateria</a></li>
-                <li><a class="enlace__categoria" href="#">Percusion</a></li>
-                <li><a class="enlace__categoria" href="./pages/variosvientos.html">Vientos</a></li>
-                <li><a class="enlace__categoria" href="#">Sonido</a></li>
-                <li><a class="enlace__categoria" href="#">Luces</a></li>
-                <li><a class="enlace__categoria" href="#">Microfonos</a></li>
-                <li><a class="enlace__categoria" href="#">Estuches</a></li>
+                <li>
+                    <div class="btn-group">
+                        <button class="btn-cat dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="inside" aria-expanded="false">
+                            Guitarras
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Electicas</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Acusticas</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Electroacustica</a>
+                            </li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Clasica</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <a href="./pages/guitarraselectricas.html">
+                            <button class="btn-cat">
+                                Bajos
+                            </button>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <button class="btn-cat dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="inside" aria-expanded="false">
+                            Cuerdas
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Ukeleles</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Charangos</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Violin</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <button class="btn-cat dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="inside" aria-expanded="false">
+                            Bateria
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Acustica</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Corral</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Octapad</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Platillos</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Acessorios</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <button class="btn-cat dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="inside" aria-expanded="false">
+                            Percusion
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Bongo</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Timbaleta</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Cajones</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Conga</a></li>
+                            <li><a class="dropdown-item" href="./pages/guitarraselectricas.html">Acessorios</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <button class="btn-cat dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="inside" aria-expanded="false">
+                            Vientos
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./pages/vientos.html">Trompeta</a></li>
+                            <li><a class="dropdown-item" href="./pages/vientos.html">Saxo</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="./pages/vientos.html">
+                        <button class="btn-cat">
+                            Sonido
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/vientos.html">
+                        <button class="btn-cat">
+                            Luces
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/vientos.html">
+                        <button class="btn-cat">
+                            Microfonos
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./pages/vientos.html">
+                        <button class="btn-cat">
+                            Estuches
+                        </button>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -138,27 +281,27 @@
         <nav class="nuestras-categorias">
             <ul class="p-0 d-flex flex-wrap justify-content-evenly">
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/guitarraselectricas.html">
                         <img src="./assets/img/categorias/ukelele.jpg" alt="Guitarras">
                         Guitarras</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/bajo.jpg" alt="Bajos">
                         Bajos</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/violin.jpg" alt="Otros Instrumentos de Cuerdas">
                         Cuerdas</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/bateria.jpg" alt="Bateria">
                         Bateria</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/bongo.jpg" alt="Percusion">
                         Percusion</a>
                 </li>
@@ -168,22 +311,22 @@
                         Vientos</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/sonido.jpg" alt="Sonido">
                         Sonido</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/iluminacion.jpg" alt="Luces">
                         Luces</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/microfono.jpg" alt="Microfonos">
                         Microfonos</a>
                 </li>
                 <li class="col-11 col-sm-5 col-md-3 d-flex justify-content-start justify-content-md-center">
-                    <a class="enlace-azul" href="#">
+                    <a class="enlace-azul" href="./pages/variosvientos.html">
                         <img src="./assets/img/categorias/estuche.jpg" alt="Estuches">
                         Estuches</a>
                 </li>
@@ -206,7 +349,7 @@
 
         <!-- Footer -->
 
-        <footer>
+        <footer class="botton-0">
             <section class="d-flex justify-content-between flex-md-column">
                 <div class="d-flex justify-content-start justify-content-md-center">
                     <a class="d-flex justify-content-start justify-content-md-center" href="./index.html">
