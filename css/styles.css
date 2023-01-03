@@ -2,6 +2,10 @@ body {
   min-height: auto;
 }
 
+.filtro{
+  display: none;
+}
+
 .cuenta input.submit, .user input.submit, div.vientos .vientos__boton, .contacto input.submit {
   color: #ffffff;
   background-color: #150578;

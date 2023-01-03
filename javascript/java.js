@@ -1,81 +1,93 @@
-let nombre = prompt("Ingresa tu nombre")
-let apellido = prompt(" Ingresa tu apellido")
-{ alert("Bienvenido  " + nombre) };
-console.log("El nombre del cliente es ", nombre, apellido)
+const addToShoppingCartButtons = document.querySelectorAll('.addToCart');
+addToShoppingCartButtons.forEach(addToCardButton => {
+    addToCardButton.addEventListener('click', addToCardClicked);
+})
 
-let compra = prompt("¿Te gustaria realizar una compra? SI / NO")
-if (compra.toLowerCase() == "no") {
-    alert("Por cualquier consulta estamos a tu disposicion.")
-} else if (compra.toLowerCase() == "si") {
-    let articulo = parseInt(prompt("Genial ¿que numero de articulo te interesa de esta pagina? / 9"))
-    while (articulo != "9"
-    ) {
-        articulo = parseInt(prompt("Genial ¿que numero de articulo te interesa de esta pagina? / si quiere salir seleccione 9 "))
+const shoppingCartVientosContainer = document.querySelector('.shopping-CartVientosContainer')
 
-        switch (articulo) {
-            case 1:
-                alert("a seleccionado el articulo de $142.000")
-                break;
-            case 2:
-                alert("a seleccionado el articulo de $182.000")
-                break;
-            case 3:
-                alert("a seleccionado el articulo de $314.000")
-                break;
-            case 4:
-                alert("a seleccionado el articulo de $550.000")
-                break;
-            case 5:
-                alert("a seleccionado el articulo de $180.000")
-                break;
-            default:
-                alert("no ha seleccionado ningun articulo")
-                break;
-        }
-    }
-} else {
-    alert("Ingresaste un valor incorrecto.")
+function addToCardClicked(event) {
+    const button = event.target
+    const vientos__art = button.closest('.vientos__art')
+    console.log("vientos__art", vientos__art);
+
+    const vientos__title = vientos__art.querySelector('.title').textContent
+    const vientos__price = vientos__art.querySelector('.precio').textContent
+    const vientos__img = vientos__art.querySelector('img').src
+
+    addVientosToShoppingCart(vientos__title, vientos__price, vientos__img)
 }
 
-class Articulo {
-    constructor(marca, modelo, precio) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.precio = parseFloat(precio);
-    }
-    toString() {
-        return this.marca + ", " + this.modelo + ", " + this.precio;
-    }
-    sumarIva(){
-        this.precio = this.precio * 1.21;
-        return this.precio;
-    }
+function addVientosToShoppingCart(vientos__title, vientos__price, vientos__img) {
+    const shoppingCartRow = document.createElement('div')
+    const shoppingCartContent = `<div class="row shoppingCartViento">
+    <div class="col-6">
+        <div class="shopping-cart-vientos d-flex align-items-center h-100 border-bottom pb-2 pt-3">
+            <img src= ${vientos__img} class="shopping-cart-image" alt="">
+            <h3 class="shopping-cart-vientos-title shoppingCartVientostitle text-truncate ml-3 mb-0">
+                ${vientos__title}
+            </h3>
+        </div>
+    </div>
+    <div class="col-2">
+        <div class="shopping-cart-vientos d-flex align-item-center h-100 border-bottom pb-2 pt-3">
+            <p class="item-price mb-0 shoppingCartVientosPrice">${vientos__price}</p>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="shopping-cart-quantity d-flex justify content-between align-items-center h-100 border-bottom">
+            <input type="number" class="shopping-cart-quantity-input shoppingCartVientosQuantity" value="1">
+            <button class="btn btn-danger buttonDelate" type="button">X</button>
+        </div>
+    </div>
+</div>`;
+    shoppingCartRow.innerHTML = shoppingCartContent
+    shoppingCartVientosContainer.append(shoppingCartRow)
 
-    getDescuento (porcentaje){
-        return this.precio - this.precio * (porcentaje/100);
-    }
+shoppingCartRow.querySelector('.buttonDelate').addEventListener('click', removeShoppingCartItem)
+
+shoppingCartRow.querySelector('.shoppingCartVientosQuantity').addEventListener ('change', quantityChanged)
+
+    updateShoppingCartTotal()
+}
+    function updateShoppingCartTotal() {
+        let total = 0
+        const shoppingCartTotal = document.querySelector('.shoppingCartTotal')
+
+        const shoppingCartVientos = document.querySelectorAll('.shoppingCartViento')
+
+        console.log("shoppingCartVientos", shoppingCartVientos);
+
+        shoppingCartVientos.forEach((shoppingCartViento) => {
+            const shoppingCartVientoPriceElement = shoppingCartViento.querySelector('.shoppingCartVientosPrice')
+
+            console.log("shoppingCartVientoPriceElement", shoppingCartVientoPriceElement)
+
+            const shoppingCartVientoPrice = Number(shoppingCartVientoPriceElement.textContent.replace('$', ''))
+
+            console.log("shoppingCartVientoPrice", shoppingCartVientoPrice);
+
+            const shoppingCartVientoQuantityElement = shoppingCartViento.querySelector('.shoppingCartVientosQuantity')
+
+            const shoppingCartVientosQuantity = Number(shoppingCartVientoQuantityElement.value)
+
+            total = total + shoppingCartVientoPrice * shoppingCartVientosQuantity
+
+           console.log("shoppingCartVientosQuantity", total);
+
+           shoppingCartTotal.innerHTML = `$ ${total.toFixed(2)}`
+        })
 }
 
+function removeShoppingCartItem(event) {
+    const buttonClicked = event.target
+    buttonClicked.closest('.shoppingCartViento').remove()
+    updateShoppingCartTotal()
+}
 
-let unArticulo = new Articulo("Parquer", "Saxo alto Custom", 142000)
-
-console.log("el articulo es  ", unArticulo)
-console.log("el articulo es  ", unArticulo.toString())
-console.log ("el precio del producto con el descuento de 10% es  ", unArticulo.getDescuento(10))
-
-let listaMarca = ["PARQUER", "KNIGHT", "PARQUER", "YAMAHA", "YAMAHA"]
-let listaArt = [0, 142000, 182000, 314000, 550000, 180000]
-
-let art = prompt ("¿que numero de articulo te interesa?")
-let artt = prompt ("¿que otro articulo te interesa?")
-console.log ("el numero de articulo seleccionado es  " , art , " y " , artt)
-
-console.log ("suma de articulo seleccionados", listaArt[art] + listaArt[artt])
-let marcaBuscada = prompt("¿que marca buscas?")
-console.log ("la marca buscada es " , marcaBuscada)
-let index = listaMarca.indexOf(marcaBuscada.toUpperCase())
-if (index !== -1) {
-    console.log("encontraste la marca buscada")
-} else {
-    console.log (" esa marca no la tenemos disponible")
+function quantityChanged(event) {
+    const input = event.target
+    if (input.value <= 0) {
+        input.value = 1
+    }
+    updateShoppingCartTotal()
 }

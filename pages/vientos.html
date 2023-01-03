@@ -80,7 +80,7 @@
             <!-- Buscar Header-dos -->
             <section class="d-flex justify-content-between align-items-center">
                 <div class="d-flex justify-content-center justify-content-md-end col-12 col-md-10">
-                    <input class="buscar w-75" type="search" placeholder="Buscar">
+                    <input id="buscador" class="buscar w-75" type="search" placeholder="Buscar">
                 </div>
 
                 <!-- User Escritorio -->
@@ -113,7 +113,7 @@
                     </a>
                     <a href="#" class="enlace-azul m-1">
                         <i class="bi bi-heart"></i></a>
-                    <a href="#" class="enlace-azul m-1">
+                    <a href="./carrito.html" class="enlace-azul m-1">
                         <i class="bi bi-cart3"></i></a>
                 </div>
             </section>
@@ -236,80 +236,121 @@
     <!-- Articulos -->
 
     <section class="tarjeta container">
-            <h2 class="d-flex justify-content-center">Saxos</h2>
-            <div class="vientos">
-                <div class="vientos__art">
-                    <div class="vientos__img">
-                        <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxoaltoparquer.jpg"
-                            alt="Saxo Alto Parquer">
-                    </div>
-                    <div class="vientos__ha">
-                        <h3>Saxo Alto Parquer Custom De Estudio Con Estuche</h3>
-                        <span class="precio">$142.000</span>
-                        <span class="enviogratis">Envio Gratis</span>
-                        <a class="vientos__boton m-1" href="#">Comprar</a>
-                        <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+        <h2 class="d-flex justify-content-center">Saxos</h2>
+        <div class="vientos">
+            <div class="vientos__art">
+                <div class="vientos__img">
+                    <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxoaltoparquer.jpg"
+                        alt="Saxo Alto Parquer">
+                </div>
+                <div class="vientos__ha">
+                    <h3 class="title">Saxo Alto Parquer Custom De Estudio Con Estuche</h3>
+                    <span class="precio">$142.000</span>
+                    <span class="enviogratis">Envio Gratis</span>
+                    <a class="vientos__boton m-1 addToCart" href="#">Comprar</a>
+                    <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                </div>
+            </div>
+
+            <div class="vientos__art">
+                <div class="vientos__img">
+                    <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxosopranoknigth.jpg"
+                        alt="Saxo soprano knight">
+                </div>
+                <div class="vientos__ha">
+                    <h3 class="title">Saxo Soprano Knight Jbsst-400 Con Estuche</h3>
+                    <span class="precio">$182.000</span>
+                    <span class="enviogratis">Envio Gratis</span>
+                    <a class="vientos__boton m-1 addToCart" href="#">Comprar</a>
+                    <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                </div>
+            </div>
+
+            <div class="vientos__art">
+                <div class="vientos__img">
+                    <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxotenorparquer.jpg"
+                        alt="Saxo tenor parquer">
+                </div>
+                <div class="vientos__ha">
+                    <h3 class="title">Saxo Tenor Parquer Majestic Estuche Pstrl</h3>
+                    <span class="precio">$314.000</span>
+                    <span class="enviogratis">Envio Gratis</span>
+                    <a class="vientos__boton m-1 addToCart" href="#">Comprar</a>
+                    <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                </div>
+            </div>
+
+            <div class="vientos__art">
+                <div class="vientos__img">
+                    <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxoyamahagoldplated.jpg"
+                        alt="Saxo Alto Yamaha Yas-26 Gold Lacquer Nickel Plated">
+                </div>
+                <div class="vientos__ha">
+                    <h3 class="title">Saxo Yamaha Gold Plated</h3>
+                    <span class="precio">$550.000</span>
+                    <span class="enviogratis">Envio Gratis</span>
+                    <a class="vientos__boton m-1 addToCart" href="#">Comprar</a>
+                    <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                </div>
+            </div>
+
+            <div class="vientos__art">
+                <div class="vientos__img">
+                    <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxoyamahavenova.jpg"
+                        alt="Saxo tenor Venova">
+                </div>
+                <div class="vientos__ha">
+                    <h3 class="title">Flauta Saxo Tenor Yamaha Venova Yvs-140 C/ Funda</h3>
+                    <span class="precio">$180.000</span>
+                    <span class="enviogratis">Envio Gratis</span>
+                    <a class="vientos__boton m-1 addToCart" href="#">Comprar</a>
+                    <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- carrito -->
+
+    <section class="shopping-Cart">
+        <div class="container">
+            <h1 class="text-center"> Carrito </h1>
+            <hr>
+            <div class="row">
+                <div class="col-6">
+                    <div class="shopping-cart-header">
+                        <h2>Producto</h2>
                     </div>
                 </div>
-
-                <div class="vientos__art">
-                    <div class="vientos__img">
-                        <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxosopranoknigth.jpg"
-                            alt="Saxo soprano knight">
-                    </div>
-                    <div class="vientos__ha">
-                        <h3>Saxo Soprano Knight Jbsst-400 Con Estuche</h3>
-                        <span class="precio">$182.000</span>
-                        <span class="enviogratis">Envio Gratis</span>
-                        <a class="vientos__boton m-1" href="#">Comprar</a>
-                        <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                <div class="col-2">
+                    <div class="shopping-cart-header">
+                        <h2 class="text-truncate"> Precio </h2>
                     </div>
                 </div>
-
-                <div class="vientos__art">
-                    <div class="vientos__img">
-                        <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxotenorparquer.jpg"
-                            alt="Saxo tenor parquer">
-                    </div>
-                    <div class="vientos__ha">
-                        <h3>Saxo Tenor Parquer Majestic Estuche Pstrl</h3>
-                        <span class="precio">$314.000</span>
-                        <span class="enviogratis">Envio Gratis</span>
-                        <a class="vientos__boton m-1" href="#">Comprar</a>
-                        <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                <div class="col-4">
+                    <div class="shopping-cart-header">
+                        <h2>Cantidad</h2>
                     </div>
                 </div>
+                <!-- Articulos elejidos en el carrito -->
 
-                <div class="vientos__art">
-                    <div class="vientos__img">
-                        <img class="vientos__art-img"
-                            src="../assets/img/categorias/vientos/saxo/saxoyamahagoldplated.jpg"
-                            alt="Saxo Alto Yamaha Yas-26 Gold Lacquer Nickel Plated">
-                    </div>
-                    <div class="vientos__ha">
-                        <h3>Saxo Yamaha Gold Plated</h3>
-                        <span class="precio">$550.000</span>
-                        <span class="enviogratis">Envio Gratis</span>
-                        <a class="vientos__boton m-1" href="#">Comprar</a>
-                        <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
-                    </div>
+                <div class="shopping-cart-vientos shopping-CartVientosContainer">
                 </div>
 
-                <div class="vientos__art">
-                    <div class="vientos__img">
-                        <img class="vientos__art-img" src="../assets/img/categorias/vientos/saxo/saxoyamahavenova.jpg"
-                            alt="Saxo tenor Venova">
-                    </div>
-                    <div class="vientos__ha">
-                        <h3>Flauta Saxo Tenor Yamaha Venova Yvs-140 C/ Funda</h3>
-                        <span class="precio">$180.000</span>
-                        <span class="enviogratis">Envio Gratis</span>
-                        <a class="vientos__boton m-1" href="#">Comprar</a>
-                        <a class="vientos__botonpref m-1" href="#">Agregar a mis preferidos</a>
+                <!-- total carrito -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="shopping-cart-total d-flex align-items-center">
+                            <p class="mb-0">Total</p>
+                            <p class="ml-4 mb-0 shoppingCartTotal"> $ 0</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
+
 
     <!-- Footer -->
 
