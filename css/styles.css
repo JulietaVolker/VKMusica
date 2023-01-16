@@ -6,6 +6,133 @@ body {
   display: none;
 }
 
+.shop-content{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0);
+max-width: 300px;
+margin: auto;
+text-align: center;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+.card > img {
+  width: 90%;
+  height: 250px;
+}
+
+.price{
+  color: grey;
+  font-size: 22px;
+}
+
+.card button{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover{
+  opacity: 0.7;
+}
+
+.modal-container {
+  width: 80%;
+  margin: 0 10%;
+  max-height: 88vh;
+  color: #ffffff;
+  background-color: #121212;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* para que este arriba */
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  scrollbar-color: none;
+}
+
+.modal-container::-webkit-scrollbar {
+  display: none;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #0a0909;
+  color: #ffffff;
+  width: 100%;
+}
+
+.modal-header-title{
+  justify-self: start;
+}
+
+.modal-header-button {
+  cursor: pointer;
+}
+
+.modal-container > .modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+}
+
+.modal-container > div > img {
+  height: 120px;
+  width: 120px;
+}
+
+.total-content {
+  font-size: 25px;
+  padding: 20px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* boton de borrar producto */
+.delete-product{
+  cursor: pointer;
+}
+
+
+/* carrito contador */
+.cantidad-carrito{
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 4px;
+  top: 37px;
+  right: 14px;
+  position: absolute;
+  display: none;
+}
+
+.restar{
+  cursor: pointer;
+}
+
+.sumar{
+  cursor: pointer;
+}
 .cuenta input.submit, .user input.submit, div.vientos .vientos__boton, .contacto input.submit {
   color: #ffffff;
   background-color: #150578;
