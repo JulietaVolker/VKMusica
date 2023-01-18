@@ -18,7 +18,7 @@ const pintarcarrito = () => {
 
     modalHeader.append(modalButton)
 
-    carrito.forEach((product) => {
+    agregarCarrito.forEach((product) => {
         let carritoContent = document.createElement("div")
         carritoContent.className = "modal-content"
         carritoContent.innerHTML = ` 
@@ -56,7 +56,7 @@ const pintarcarrito = () => {
         })
     })
 
-    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+    const total = agregarCarrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
 
     const totalBuying = document.createElement("div")
     totalBuying.className = "total-content"
@@ -69,8 +69,8 @@ const pintarcarrito = () => {
 verCarrito.addEventListener("click", pintarcarrito)
 
 const eliminarProducto = (id) => {
-    const foundId = carrito.find((element) => element.id === id)
-    carrito = carrito.filter((carritoId) => {
+    const foundId = agregarCarrito.find((element) => element.id === id)
+    agregarCarrito = agregarCarrito.filter((carritoId) => {
         return carritoId !== foundId
     })
 
@@ -81,7 +81,7 @@ const eliminarProducto = (id) => {
 
 const carritoCounter = () => {
     cantidadCarrito.style.display = "block"
-    const carritoLength = carrito.length
+    const carritoLength = agregarCarrito.length
     localStorage.setItem("carritoLength", JSON.stringify(carritoLength))
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"))
 }
