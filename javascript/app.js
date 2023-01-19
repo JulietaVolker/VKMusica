@@ -4,8 +4,7 @@ const modalContainer = document.getElementById("modal-container")
 const cantidadCarrito = document.getElementById("cantidadCarrito")
 const url = "../api/products.json"
 
-let carrito = []
-//JSON.parse(localStorage.getItem("carrito")) 
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 fetch(url)
     .then(res => res.json())
