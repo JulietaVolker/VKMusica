@@ -11,13 +11,8 @@ fetch(url)
     .then(data => mostrarProductos(data))
 
 function mostrarProductos(productos) {
-    console.log('EN LA FUNCION');
-    console.log(productos);
-
 
     const contenedorProduct = document.querySelector('#container')
-
-
 
     productos.forEach(product => {
         let card = document.createElement('div')
@@ -38,11 +33,8 @@ function mostrarProductos(productos) {
 }
 
 function agregarCarrito(e, prods) {
-    console.log("prods" ,prods)
-    console.log(e.target.id)
 
     const comprar = prods.find(elem => elem.id === parseInt(e.target.id))
-    console.log("comprar", comprar)
     
     Toastify({
 
@@ -72,9 +64,7 @@ function agregarCarrito(e, prods) {
             precio: comprar.precio,
             cantidad: comprar.cantidad,
         })
-        console.log(carrito)
     }
-    console.log(carrito);
     carritoCounter()
     saveLocal()
 }

@@ -36,8 +36,8 @@ let pintarProductos = () => {
     <img src="${product.img}">
     <h3>${product.nombre}</h3>
     <p>${product.precio}</p>
-     <button id="${product.id}" class="restar"> - </button>
-    <p>Cantidad : ${product.cantidad}</p>
+     <button id=${product.id} class="restar"> - </button>
+    <p id="cantidad">Cantidad : ${product.cantidad}</p>
     <button id="${product.id}" class="sumar"> + </button>
      <p>Total: ${product.cantidad * product.precio}</p>
      <button id="${product.id}" class="eliminar"> ❌ </button>
@@ -47,47 +47,64 @@ let pintarProductos = () => {
 
     const botonRestar = document.querySelectorAll(".restar")
     botonRestar.forEach(btn => {
-        btn.addEventListener('click', botonRestar)
+        btn.addEventListener('click', btnRestar)
     })
 
     const botonSumar = document.querySelectorAll('.sumar')
     botonSumar.forEach(btn => {
-        btn.addEventListener('click', botonSumar)
+        btn.addEventListener('click', btnSumar)
     })
 
     const botonEliminar = document.querySelectorAll('.eliminar')
     botonEliminar.forEach(btn => {
-        btn.addEventListener('click', botonEliminar)
+        btn.addEventListener('click', btnEliminar)
     })
 
     verCarrito.addEventListener("click", carrito)
 }
 
-function botonRestar() {
+function btnRestar(e) {
     console.log("clickkkk");
-    // const id = e.target.id
-    // const producto = carrito.findIndex(el => el.id === id)
+    const id = e.target.id
+    const producto = carrito.findIndex(e => e.id === id)
 
-    // carrito[index].cantidad--
+    console.log("produuuucto", producto);
+    carrito[index].cantidad--
 
-    // saveLocal()
-    // pintarCarrito()
+    saveLocal()
+    carrito()
+    pintarCarrito()
 }
 
 
-function botonSumar(e) {
+function btnSumar(e) {
+    console.log("click")
     const id = e.target.id
-    const producto = carrito.findIndex(el => el.id === id)
-
+    const producto = carrito.findIndex(e => e.id === id)
+    console.log("producto", producto);
     carrito[index].cantidad++
 
     saveLocal()
     pintarCarrito()
 }
 
-function botonEliminar(e) {
-    eliminarProducto(e.target.id)
+function btnEliminar(e) {
+    const eliminarProducto = e.target.id
+    console.log(eliminarProducto);
+    const elmProducto = carrito.findIndex(e => e.id === id)
+    const indice = carrito.indexOf(elmProducto)
+    carrito.splice(indice, 1)
+    saveLocal()
+    pintarCarrito()
 }
+
+
+// function btnEliminar(e) {
+//     eliminarProducto(e.target.id)
+//     console.log(eliminarProducto);
+//     saveLocal()
+//     pintarCarrito()
+// }
 
 
 verCarrito.addEventListener("click", pintarCarrito)
@@ -95,15 +112,15 @@ verCarrito.addEventListener("click", pintarProductos)
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id)
+
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId
     })
-
+    console.log(carrito)
     pintarCarrito()
     saveLocal()
     carritoCounter()
 }
-
 
 const carritoCounter = () => {
     cantidadCarrito.style.display = "block"
@@ -111,6 +128,5 @@ const carritoCounter = () => {
     localStorage.setItem("carritoLength", JSON.stringify(carritoLength))
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"))
 }
-
 
 carritoCounter()
