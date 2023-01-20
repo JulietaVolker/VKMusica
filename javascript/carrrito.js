@@ -18,7 +18,17 @@ let pintarCarrito = () => {
 
     modalHeader.append(modalButton)
 
+    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
+    const totalBuying = document.createElement("div")
+    totalBuying.className = "total-content"
+    totalBuying.innerHTML = `
+      total a pagar: ${total} $
+   `
+    modalContainer.append(totalBuying)
+    verCarrito.addEventListener("click", pintarCarrito)
+}
 
+let pintarProductos = () => {
     carrito.forEach(product => {
         const carritoContent = document.createElement("div")
         carritoContent.className = "modal-content"
@@ -33,22 +43,9 @@ let pintarCarrito = () => {
      <button id="${product.id}" class="eliminar"> ❌ </button>
  `
         modalContainer.append(carritoContent)
-        pintarCarrito()
     })
 
-    const total = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0)
-    const totalBuying = document.createElement("div")
-    totalBuying.className = "total-content"
-    totalBuying.innerHTML = `
-      total a pagar: ${total} $
-   `
-    modalContainer.append(totalBuying)
-
-
-    verCarrito.addEventListener("click", pintarCarrito)
-
-
-    const botonRestar = document.querySelectorAll('.restar')
+    const botonRestar = document.querySelectorAll(".restar")
     botonRestar.forEach(btn => {
         btn.addEventListener('click', botonRestar)
     })
@@ -58,20 +55,23 @@ let pintarCarrito = () => {
         btn.addEventListener('click', botonSumar)
     })
 
-    const eliminar = document.querySelectorAll('.eliminar')
+    const botonEliminar = document.querySelectorAll('.eliminar')
     botonEliminar.forEach(btn => {
-        btn.addEventListener('click', botonElimiar)
+        btn.addEventListener('click', botonEliminar)
     })
+
+    verCarrito.addEventListener("click", carrito)
 }
 
-function botonRestar(e) {
-    const id = e.target.id
-    const producto = carrito.findIndex(el => el.id === id)
+function botonRestar() {
+    console.log("clickkkk");
+    // const id = e.target.id
+    // const producto = carrito.findIndex(el => el.id === id)
 
-    carrito[index].cantidad--
+    // carrito[index].cantidad--
 
-    saveLocal()
-    pintarcarrito()
+    // saveLocal()
+    // pintarCarrito()
 }
 
 
@@ -82,11 +82,16 @@ function botonSumar(e) {
     carrito[index].cantidad++
 
     saveLocal()
-    pintarcarrito()
+    pintarCarrito()
+}
+
+function botonEliminar(e) {
+    eliminarProducto(e.target.id)
 }
 
 
 verCarrito.addEventListener("click", pintarCarrito)
+verCarrito.addEventListener("click", pintarProductos)
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id)
@@ -102,7 +107,7 @@ const eliminarProducto = (id) => {
 
 const carritoCounter = () => {
     cantidadCarrito.style.display = "block"
-    const carritoLength = agregarCarrito.length
+    const carritoLength = carrito.length
     localStorage.setItem("carritoLength", JSON.stringify(carritoLength))
     cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"))
 }

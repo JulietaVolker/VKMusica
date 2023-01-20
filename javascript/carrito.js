@@ -66,7 +66,7 @@ const pintarcarrito = () => {
     modalContainer.append(totalBuying)
 }
 
-verCarrito.addEventListener("click", pintarcarrito)
+VerCarrito.addEventListener("click", pintarcarrito)
 
 const eliminarProducto = (id) => {
     const foundId = carrito.find((element) => element.id === id)
