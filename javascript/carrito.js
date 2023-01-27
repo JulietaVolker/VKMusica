@@ -37,7 +37,7 @@ let pintarProductos = () => {
     <h3>${product.nombre}</h3>
     <p>${product.precio}</p>
      <button id=${product.id} class="restar"> - </button>
-    <p id="cantidad">Cantidad : ${product.cantidad}</p>
+    <p id="cantidad" class="cantidad">Cantidad : ${product.cantidad}</p>
     <button id="${product.id}" class="sumar"> + </button>
      <p>Total: ${product.cantidad * product.precio}</p>
      <button id="${product.id}" class="eliminar"> ❌ </button>
@@ -64,48 +64,35 @@ let pintarProductos = () => {
 }
 
 function btnRestar(e) {
-    console.log("clickkkk");
-    const id = e.target.id
+    const id = parseInt(e.target.id)
     const producto = carrito.findIndex(e => e.id === id)
-
-    console.log("produuuucto", producto);
-    carrito[index].cantidad--
-
+    carrito[carrito.findIndex(e => e.id === id)].cantidad--
+ 
     saveLocal()
-    carrito()
     pintarCarrito()
+    pintarProductos()
 }
-
 
 function btnSumar(e) {
-    console.log("click")
-    const id = e.target.id
+    const id = parseInt(e.target.id)
     const producto = carrito.findIndex(e => e.id === id)
-    console.log("producto", producto);
-    carrito[index].cantidad++
-
+    carrito[carrito.findIndex(e => e.id === id)].cantidad++
+ 
     saveLocal()
     pintarCarrito()
+    pintarProductos()
 }
+
 
 function btnEliminar(e) {
-    const eliminarProducto = e.target.id
-    console.log(eliminarProducto);
-    const elmProducto = carrito.findIndex(e => e.id === id)
-    const indice = carrito.indexOf(elmProducto)
-    carrito.splice(indice, 1)
+    const eliminarProducto = parseInt(e.target.id)
+    const botonEliminar = carrito.findIndex(e => e.id === eliminarProducto)
+    carrito.splice(carrito.findIndex(e => e.id === eliminarProducto), 1)
+
     saveLocal()
     pintarCarrito()
+    pintarProductos()
 }
-
-
-// function btnEliminar(e) {
-//     eliminarProducto(e.target.id)
-//     console.log(eliminarProducto);
-//     saveLocal()
-//     pintarCarrito()
-// }
-
 
 verCarrito.addEventListener("click", pintarCarrito)
 verCarrito.addEventListener("click", pintarProductos)

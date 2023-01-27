@@ -34,8 +34,6 @@ function mostrarProductos(productos) {
 
 function agregarCarrito(e, prods) {
 
-    const comprar = prods.find(elem => elem.id === parseInt(e.target.id))
-    
     Toastify({
 
         text: "Se agrego al carrito",
@@ -48,6 +46,8 @@ function agregarCarrito(e, prods) {
 
     }).showToast();
 
+    const comprar = prods.find(elem => elem.id === parseInt(e.target.id))
+    console.log("comprar", comprar)
     const existe = carrito.some((p) => p.id === comprar.id)
 
     if (existe) {
@@ -67,6 +67,18 @@ function agregarCarrito(e, prods) {
     }
     carritoCounter()
     saveLocal()
+}
+
+function btnSumar(e) {
+    console.log("click")
+    const id = e.target.id
+    console.log(id);
+    const producto = carrito.findIndex(e => e.id === id)
+    console.log("producto", producto);
+    carrito[index].cantidad++
+
+    saveLocal()
+    pintarCarrito()
 }
 
 const saveLocal = () => {
