@@ -69,18 +69,6 @@ function agregarCarrito(e, prods) {
     saveLocal()
 }
 
-function btnSumar(e) {
-    console.log("click")
-    const id = e.target.id
-    console.log(id);
-    const producto = carrito.findIndex(e => e.id === id)
-    console.log("producto", producto);
-    carrito[index].cantidad++
-
-    saveLocal()
-    pintarCarrito()
-}
-
 const saveLocal = () => {
     localStorage.setItem("carrito", JSON.stringify(carrito))
 }

@@ -65,9 +65,10 @@ let pintarProductos = () => {
 
 function btnRestar(e) {
     const id = parseInt(e.target.id)
-    const producto = carrito.findIndex(e => e.id === id)
-    carrito[carrito.findIndex(e => e.id === id)].cantidad--
- 
+    const producto = carrito.findIndex((e => e.id === id) && (e => e.cantidad > 1))
+
+    carrito[producto].cantidad--
+
     saveLocal()
     pintarCarrito()
     pintarProductos()
@@ -76,8 +77,8 @@ function btnRestar(e) {
 function btnSumar(e) {
     const id = parseInt(e.target.id)
     const producto = carrito.findIndex(e => e.id === id)
-    carrito[carrito.findIndex(e => e.id === id)].cantidad++
- 
+    carrito[producto].cantidad++
+
     saveLocal()
     pintarCarrito()
     pintarProductos()
@@ -87,7 +88,7 @@ function btnSumar(e) {
 function btnEliminar(e) {
     const eliminarProducto = parseInt(e.target.id)
     const botonEliminar = carrito.findIndex(e => e.id === eliminarProducto)
-    carrito.splice(carrito.findIndex(e => e.id === eliminarProducto), 1)
+    carrito.splice(botonEliminar, 1)
 
     saveLocal()
     pintarCarrito()
@@ -103,7 +104,7 @@ const eliminarProducto = (id) => {
     carrito = carrito.filter((carritoId) => {
         return carritoId !== foundId
     })
-    console.log(carrito)
+
     pintarCarrito()
     saveLocal()
     carritoCounter()
